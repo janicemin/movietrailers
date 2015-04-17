@@ -1,0 +1,7 @@
+<h2>Edit <%= @movie.title %></h2>
+
+<%= form_for(@movie) do |f| %>
+  <%= f.label :poster_url %>
+  <%= f.text_field :poster_url %>
+  <%= f.submit "Add Poster" %>
+<% end %>
