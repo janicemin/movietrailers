@@ -3,8 +3,9 @@
 
 
 <div class='roles'>
+<h3>Popular roles</h3>
 <% @movies.each do |movie| %>
-	<span class='movie-link'><%= link_to movie.title, movie %> <%= movie.year %></span>
+	<span class='movie-link'><%= link_to movie.title, movie %> (<%= movie.year %>)</span>
 <% end %>
 
 </div>
