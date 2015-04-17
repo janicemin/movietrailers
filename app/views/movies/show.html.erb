@@ -3,6 +3,8 @@
   <%= image_tag @movie.poster_url %>
 <% end %>
 
+<%= link_to "Edit poster", edit_movie_path %>
+
 <p><%= @movie.plot %></p>
 
 <% if @movie.trailers.any? %>

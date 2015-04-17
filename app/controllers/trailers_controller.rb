@@ -1,4 +1,5 @@
 class TrailersController < ApplicationController
+
 	before_action :find_movie, only: [:new, :create, :edit, :update, :destroy]
  
   def new
@@ -12,7 +13,7 @@ class TrailersController < ApplicationController
     	else
     		render :new
     	end
-  end
+   end
 
   def edit
   end

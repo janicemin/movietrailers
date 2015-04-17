@@ -17,12 +17,22 @@ class MoviesController < ApplicationController
     actor_names = actors.split(', ')
     actor_names.each do |actor_name|
       if !Actor.find_by(name: actor_name)
-        @movie.actors.create(name: actor_name)
+        @movie.actors.create(name: actor_name, photo_url: "http://www.alcoholrecoverycentre.com/wp-content/uploads/2014/10/Blank-Profile.jpg")
       else
         actor = Actor.find_by(name: actor_name)
         actor.movies << @movie
       end
     end
+    redirect_to @movie
+  end
+
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.update(poster_url: params[:movie][:poster_url])
     redirect_to @movie
   end
 

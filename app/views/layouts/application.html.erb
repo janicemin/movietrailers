@@ -9,9 +9,13 @@
 <body >
 	<header><h1>Movie Trailers</h1><span class='tag'>Best Trailers for life</span>
 	<ul class='nav-bar'>
-		<li class='nav-link'><a href='#' >Movies</a></li>
-		<li class='nav-link'><a href='#' >Actor Profiles</a></li>
-		<li class='nav-link'><a href='#' >search</a></li>
+		<li class='nav-link'><%= link_to "Movies", root_path %></li>
+		<li class='nav-link'><%= link_to "Actors", actors_path %></li>
+    <%= form_tag '/movies/search' do %>
+      <%= label_tag :s, "Search for Movies" %>
+      <%= text_field_tag :s, nil, placeholder: "Title keywords" %>
+      <%= submit_tag "Search" %>
+    <% end %>
 	</ul></header>
 <main class='content'>
 <%= yield %>
