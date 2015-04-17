@@ -26,6 +26,14 @@ class MoviesController < ApplicationController
     redirect_to @movie
   end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    
+  end
+
   def search
     @movie = Movie.new
     title = params[:s]
@@ -33,6 +41,11 @@ class MoviesController < ApplicationController
     imdb_ids = short_results["Search"].map {|result| result["imdbID"]}
     @results = imdb_ids.map {|id| HTTParty.get("http://omdbapi.com/?i=#{id}&plot=full")}
     render :results
+  end
+
+  private
+  def movie_params
+    params.require(:movie).permit(:title, :year, :poster_url, :plot)
   end
 
 end
