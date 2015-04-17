@@ -1,17 +1,21 @@
 <h2>Search results:</h2>
-<% @results.each do |movie_hash| %>
-  <h3><%= movie_hash["Title"] %> (<%= movie_hash["Year"] %>)</h3>
-  <% if movie_hash["Poster"] != "N/A" %>
-    <%= image_tag movie_hash["Poster"] %>
-  <% end %>
-  <p>Actors: <%= movie_hash["Actors"] %></p>
-  <p><%= movie_hash["Plot"] %></p>
-  <%= form_for @movie do |f| %>
-    <%= f.hidden_field :title, value: movie_hash["Title"] %>
-    <%= f.hidden_field :year, value: movie_hash["Year"] %>
-    <%= f.hidden_field :plot, value: movie_hash["Plot"] %>
-    <%= f.hidden_field :poster_url, value: movie_hash["Poster"] %>
-    <%= f.hidden_field :actors, value: movie_hash["Actors"] %>
-    <%= f.submit "Add Movie" %>
+<% if @results == nil %>
+  <p>No results.</p>
+<% else %>
+  <% @results.each do |movie_hash| %>
+    <h3><%= movie_hash["Title"] %> (<%= movie_hash["Year"] %>)</h3>
+    <% if movie_hash["Poster"] != "N/A" %>
+      <%= image_tag movie_hash["Poster"] %>
+    <% end %>
+    <p>Actors: <%= movie_hash["Actors"] %></p>
+    <p><%= movie_hash["Plot"] %></p>
+    <%= form_for @movie do |f| %>
+      <%= f.hidden_field :title, value: movie_hash["Title"] %>
+      <%= f.hidden_field :year, value: movie_hash["Year"] %>
+      <%= f.hidden_field :plot, value: movie_hash["Plot"] %>
+      <%= f.hidden_field :poster_url, value: movie_hash["Poster"] %>
+      <%= f.hidden_field :actors, value: movie_hash["Actors"] %>
+      <%= f.submit "Add Movie" %>
+    <% end %>
   <% end %>
 <% end %>

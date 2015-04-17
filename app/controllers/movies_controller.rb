@@ -40,8 +40,12 @@ class MoviesController < ApplicationController
     @movie = Movie.new
     title = params[:s].gsub(/\s/, '%20')
     short_results = HTTParty.get("http://www.omdbapi.com/?s=#{title}")
-    imdb_ids = short_results["Search"].map {|result| result["imdbID"]}
-    @results = imdb_ids.map {|id| HTTParty.get("http://omdbapi.com/?i=#{id}&plot=full")}
+    if short_results['Response'] == 'False'
+      @results = nil
+    else
+      imdb_ids = short_results["Search"].map {|result| result["imdbID"]}
+      @results = imdb_ids.map {|id| HTTParty.get("http://omdbapi.com/?i=#{id}&plot=full")}
+    end
     render :results
   end
 
