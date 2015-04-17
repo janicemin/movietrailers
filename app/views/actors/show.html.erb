@@ -7,7 +7,7 @@
 <% end %>
 
 </div>
-<img src='<%= @actor.photo_url %>' class='actor-photo' />
+<img src='<%= @actor.photo_url || "/assets/Blank-Profile.jpg" %>' class='actor-photo' />
 <div class='actor-actions'>
 
 <%= link_to 'Edit', edit_actor_path(@actor) %>
