@@ -23,6 +23,7 @@ body .content {
 footer {
 	
 	padding: 10px;
+	clear: both;
 }
 
  footer .footer-content{
@@ -50,3 +51,21 @@ header ul.nav-bar li.nav-link a{
 	width: 100%;
 
 }
+
+
+/* Actor Stuff */
+
+div.roles {
+	float:left;
+}
+img.actor-photo {
+	float:right;
+}
+div.actor-actions{
+	clear:both;
+	float: right;
+	
+}
+
+
+
