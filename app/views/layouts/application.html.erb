@@ -6,9 +6,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body >
+	<header><h1>MovieTrailer</h1><span class='tag'>Best Trailers for life</span>
+	<ul class='nav-bar'>
+		<li class='nav-link'><a href='#' >Movies</a></li>
+		<li class='nav-link'><a href='#' >Actor Profiles</a></li>
+		<li class='nav-link'><a href='#' >search</a></li>
+	</ul></header>
+<main class='content'>
 <%= yield %>
-
+</main>
+<footer>
+<div class='footer-content'>
+	Copy Right is something
+</div>
+</footer>
 </body>
 </html>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :trailers
   end
 
-  resources :actors
+  resources :actors 
 
   post 'movies/search', to: 'movies#search'
 end
