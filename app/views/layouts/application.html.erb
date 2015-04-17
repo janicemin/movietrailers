@@ -8,15 +8,17 @@
 </head>
 <body >
 	<header><h1>Movie Trailers</h1><span class='tag'>Best Trailers for life</span>
-	<ul class='nav-bar'>
+  <div class='nav-bar'>
+	<ul class='nav-links'>
 		<li class='nav-link'><%= link_to "Movies", root_path %></li>
 		<li class='nav-link'><%= link_to "Actors", actors_path %></li>
-    <%= form_tag '/movies/search' do %>
-      <%= label_tag :s, "Search for Movies" %>
-      <%= text_field_tag :s, nil, placeholder: "Title keywords" %>
-      <%= submit_tag "Search" %>
+
+  </ul><div class='search'>
+        <%= form_tag '/movies/search' do %>
+      <%= text_field_tag :s, nil, placeholder: "Search mMovies" %>
+      <%= submit_tag "Search" %> 
     <% end %>
-	</ul></header>
+  </div></div></header>
 <main class='content'>
 <%= yield %>
 </main>
