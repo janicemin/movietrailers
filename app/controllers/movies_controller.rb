@@ -26,6 +26,16 @@ class MoviesController < ApplicationController
     redirect_to @movie
   end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    @movie.update(poster_url: params[:movie][:poster_url])
+    redirect_to @movie
+  end
+
   def search
     @movie = Movie.new
     title = params[:s]
