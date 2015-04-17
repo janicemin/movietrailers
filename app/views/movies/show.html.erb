@@ -2,17 +2,27 @@
 <% if @movie.poster_url %>  
   <%= image_tag @movie.poster_url %>
 <% end %>
-<p><%= @movie.plot %></p>
-<% if @movie.trailers.any? %>
-  <ul>
-    <% @movie.trailers.each do |trailer| %>
-      <li><%= trailer.title  %></li>
 
-    <% end %>
-  </ul>
-  <iframe width="560" height="315" src="<%= @movie.trailers.last.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<p><%= @movie.plot %></p>
+
+<% if @movie.trailers.any? %>
+
+  <ul>
+  <% @movie.trailers.each do |trailer| %>
+  <li><%= trailer.title %></li>
+
+  <iframe width="560" height="315" src="<%= trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
+
+  <li><%= link_to "Edit", edit_movie_trailer_path( @movie, trailer ) %></li>
+
+    <li><%= link_to "Destroy", movie_trailer_path( @movie, trailer ), method: :delete %></li>
   
+    </ul>
+
+   <% end %>
 <% end %>
+<%= link_to "Add Trailer", new_movie_trailer_path( @movie ) %>
+
 <p>Actors:</p>
 <ul>
   <% @movie.actors.each do |actor| %>
