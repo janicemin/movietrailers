@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Movie.first.trailers.create(title: "monkey butt", embed_url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/CsGYh8AacgY" frameborder="0" allowfullscreen></iframe>')
