@@ -1,4 +1,16 @@
 class MoviesController < ApplicationController
+
+  def index
+    @movies = Movie.all
+  end
+
+  def new
+  end
+
+  def create
+    @movie = Movie.new
+  end
+
   def search
     title = params[:s]
     results = HTTParty.get("http://www.omdbapi.com/?s=#{title}")

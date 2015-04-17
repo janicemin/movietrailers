@@ -3,3 +3,20 @@
   <%= text_field_tag :s %>
   <%= submit_tag %>
 <% end %>
+
+<% @movies.each do |movie| %>
+  <div class='movie'>
+    <h3><%= movie.title %> (<%= movie.year %>)</h3>
+    <% if movie.poster_url %>  
+      <%= image_tag movie.poster_url %>
+    <% end %>
+    <p><%= movie.plot %></p>
+
+    <p>Actors:</p>
+    <ul>
+      <% movie.actors.each do |actor| %>
+        <li><%= link_to actor.name, actor %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
