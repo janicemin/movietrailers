@@ -1,7 +1,8 @@
-<%= form_tag '/movies/search' do %> 
-  <%= label_tag :s %>
-  <%= text_field_tag :s %>
-  <%= submit_tag %>
+<%= form_tag '/movies/search' do %>
+  <%= label_tag :s, "Search for Movies" %>
+  <%= text_field_tag :s, nil, placeholder: "Title keywords" %>
+  <%= submit_tag "Search" %>
+
 <% end %>
 
 <% @movies.each do |movie| %>
