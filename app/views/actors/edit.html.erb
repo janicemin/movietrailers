@@ -1,0 +1,14 @@
+<% if @actor.errors.any? %>
+<ul>
+	<% @actor.errors.full_messages.each do |err| %>
+	<li><%= err %></li>
+	<% end %>
+</ul>
+<% end %>
+<%= form_for @actor do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :photo_url, value: "Image Source" %>
+	<%= f.text_field :photo_url %>
+	<%= f.submit "Save", id: "submit" %>
+<% end %>

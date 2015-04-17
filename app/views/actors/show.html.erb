@@ -1,0 +1,17 @@
+<h1><%= @actor.name %></h1>
+
+
+
+<div class='roles'>
+<h3>Popular roles</h3>
+<% @movies.each do |movie| %>
+	<span class='movie-link'><%= link_to movie.title, movie %> (<%= movie.year %>)</span>
+<% end %>
+
+</div>
+<img src='<%= @actor.photo_url %>' class='actor-photo' />
+<div class='actor-actions'>
+
+<%= link_to 'Edit', edit_actor_path(@actor) %>
+<%= link_to 'Remove Actor', actor_path(@actor), method: :delete, data: {confirm: "are you sure?"} %> 
+</div>

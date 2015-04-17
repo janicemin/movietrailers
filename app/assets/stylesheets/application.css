@@ -13,3 +13,90 @@
  *= require_tree .
  *= require_self
  */
+ /*basic layout
+ rearrange later*/
+
+body .content {
+	border:0;
+	padding:0px;
+ 	width: 700px;
+ 	margin: 0 auto 0 auto;
+ }
+ header {
+ 	background-color: black;
+ 	padding:0px;
+ 	margin:0px;
+ }
+footer {
+	
+	padding: 10px;
+	clear: both;
+	background-color: black;
+	color: white;
+}
+
+ footer .footer-content{
+ 	text-align: center;
+
+ }
+header h1, header h2{
+	display: inline-block;
+	color: white;
+}
+header h1{
+	background-color:#1EAEDB;
+	padding: 10px;
+	
+	margin: 0px;
+}
+header span{
+	color: white;
+}
+
+header ul.nav-bar {
+	background-color: #ccc;
+	display: block;
+	list-style: none;
+	margin:0px;
+	text-align: center;
+}
+header ul.nav-bar li.nav-link {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+
+
+}
+header ul.nav-bar li.nav-link a{
+	display: block;
+	padding: 5px;
+	width: 100%;
+	text-decoration: none;
+	color: white;
+	
+
+}
+
+header ul.nav-bar li.nav-link a:hover {
+
+	background-color: #e1e1e1;
+}
+
+
+
+/* Actor Stuff */
+
+div.roles {
+	float:left;
+}
+img.actor-photo {
+	float:right;
+}
+div.actor-actions{
+	clear:both;
+	float: right;
+	
+}
+
+
+
