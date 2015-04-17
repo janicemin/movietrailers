@@ -1,8 +1,4 @@
-<%= form_tag '/movies/search' do %>
-  <%= label_tag :s, "Search for Movies" %>
-  <%= text_field_tag :s, nil, placeholder: "Title keywords" %>
-  <%= submit_tag "Search" %>
-<% end %>
+<h1>Movies</h1>
 
 <% @movies.each do |movie| %>
   <h3><%= link_to "#{movie.title} (#{movie.year})", movie %></h3>
