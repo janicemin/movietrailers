@@ -1,4 +1,5 @@
 <h1><%= @actor.name %></h1>
 
 <img src='<%= @actor.photo_url %>' />
-<%= link_to 'Edit', edit_actor_path(@actor) %> 
+<%= link_to 'Edit', edit_actor_path(@actor) %>
+<%= link_to 'Remove Actor', actor_path(@actor), method: :delete, data: {confirm: "are you sure?"} %> 
