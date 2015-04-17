@@ -1,27 +1,33 @@
-<h3><%= @movie.title %> (<%= @movie.year %>)</h3>
+<h1><%= @movie.title %> (<%= @movie.year %>)</h1>
+<div class='movie-poster'>
 <% if @movie.poster_url %>  
-  <%= image_tag @movie.poster_url %>
+  <%= image_tag @movie.poster_url  %>
 <% end %>
-
 <%= link_to "Edit poster", edit_movie_path %>
+</div>
 
+
+
+<h2>Plot</h2>
 <p><%= @movie.plot %></p>
 
-<% if @movie.trailers.any? %>
-  <ul>
-    <% @movie.trailers.each do |trailer| %>
-      <li><%= trailer.title %></li>
-      <iframe width="560" height="315" src="<%= trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
-      <li><%= link_to "Edit", edit_movie_trailer_path(@movie, trailer) %></li>
-      <li><%= link_to "Destroy", movie_trailer_path(@movie, trailer), method: :delete %></li>
-    <% end %>
-  </ul>
-<% end %>
-<%= link_to "Add Trailer", new_movie_trailer_path(@movie) %>
-
-<p>Actors:</p>
-<ul>
+<div class='cast'>
+<h2>Cast</h2>
+<ul >
   <% @movie.actors.each do |actor| %>
     <li><%= link_to actor.name, actor %></li>
   <% end %>
 </ul>
+</div>
+
+<% if @movie.trailers.any? %>
+<div class='trailers' >
+    <% @movie.trailers.each do |trailer| %>
+      <h2><%= trailer.title.capitalize %></h2>
+      <iframe width="560" height="315" src="<%= trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
+      <p><%= link_to "Edit", edit_movie_trailer_path(@movie, trailer) %>
+        <%= link_to "Destroy", movie_trailer_path(@movie, trailer), method: :delete %></p>
+    <% end %>
+  </div>
+<% end %>
+<%= link_to "Add Trailer", new_movie_trailer_path(@movie) %>

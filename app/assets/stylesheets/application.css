@@ -24,7 +24,7 @@ body{
 
 body .content {
 	border:0;
-	padding:0px;
+	padding:0 0 10px 0;
  	width: 700px;
  	margin: 0 auto 0 auto;
  }
@@ -60,7 +60,7 @@ header span{
 }
 
 header div.nav-bar {
-	background-color: #ccc;
+	background-color: #aaa;
 	display: block;
 	margin:0px;
 	text-align: center;
@@ -69,8 +69,12 @@ header div.nav-bar div.search{
 	display: inline-block;
 	padding: 0 30px;
 }
+iframe {
+	margin-left:auto;
+	margin-right: auto;
+}
 header div.nav-bar ul.nav-links {
-	background-color: #ccc;
+
 	display: inline-block;
 	list-style: none;
 	margin:0px;
@@ -108,6 +112,24 @@ header div.nav-bar div.search  form input[type="submit"]{
 header div.nav-bar ul.nav-links li.nav-link  a:hover {
 
 	background-color: #e1e1e1;
+}
+
+
+.movie-poster{
+	display: block;
+	float: right;
+	width:250px;
+	text-align: right;
+}
+.trailers {
+	clear:both;
+}
+
+.cast ul{
+	list-style: none;
+}
+.cast ul li{
+	display: block;
 }
 
 
