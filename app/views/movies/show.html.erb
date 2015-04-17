@@ -25,6 +25,7 @@
     <% @movie.trailers.each do |trailer| %>
       <h2><%= trailer.title.capitalize %></h2>
       <iframe width="560" height="315" src="<%= trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
+
       <p><%= link_to "Edit", edit_movie_trailer_path(@movie, trailer) %>
         <%= link_to "Destroy", movie_trailer_path(@movie, trailer), method: :delete %></p>
     <% end %>
