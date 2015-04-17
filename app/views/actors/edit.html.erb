@@ -1,3 +1,9 @@
+
+
+
+
+<h1><%= @actor.name %> - Edit</h1>
+<div class='actor-form'>
 <% if @actor.errors.any? %>
 <ul>
 	<% @actor.errors.full_messages.each do |err| %>
@@ -12,3 +18,6 @@
 	<%= f.text_field :photo_url %>
 	<%= f.submit "Save", id: "submit" %>
 <% end %>
+</div>
+
+<img src='<%= @actor.photo_url %>' class='actor-photo' />
