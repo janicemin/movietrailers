@@ -8,22 +8,16 @@
 <p><%= @movie.plot %></p>
 
 <% if @movie.trailers.any? %>
-
   <ul>
-  <% @movie.trailers.each do |trailer| %>
-  <li><%= trailer.title %></li>
-
-  <iframe width="560" height="315" src="<%= trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
-
-  <li><%= link_to "Edit", edit_movie_trailer_path( @movie, trailer ) %></li>
-
-    <li><%= link_to "Destroy", movie_trailer_path( @movie, trailer ), method: :delete %></li>
-  
-    </ul>
-
-   <% end %>
+    <% @movie.trailers.each do |trailer| %>
+      <li><%= trailer.title %></li>
+      <iframe width="560" height="315" src="<%= trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
+      <li><%= link_to "Edit", edit_movie_trailer_path(@movie, trailer) %></li>
+      <li><%= link_to "Destroy", movie_trailer_path(@movie, trailer), method: :delete %></li>
+    <% end %>
+  </ul>
 <% end %>
-<%= link_to "Add Trailer", new_movie_trailer_path( @movie ) %>
+<%= link_to "Add Trailer", new_movie_trailer_path(@movie) %>
 
 <p>Actors:</p>
 <ul>
