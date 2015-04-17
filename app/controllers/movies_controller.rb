@@ -38,7 +38,7 @@ class MoviesController < ApplicationController
 
   def search
     @movie = Movie.new
-    title = params[:s]
+    title = params[:s].gsub(/\s/, '%20')
     short_results = HTTParty.get("http://www.omdbapi.com/?s=#{title}")
     imdb_ids = short_results["Search"].map {|result| result["imdbID"]}
     @results = imdb_ids.map {|id| HTTParty.get("http://omdbapi.com/?i=#{id}&plot=full")}
