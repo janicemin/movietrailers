@@ -1,0 +1,14 @@
+<% if @trailer.errors.any? %>
+<ul>
+	<% @trailer.errors.full_messages.each do |err| %>
+	<li><%= err %></li>
+	<% end %>
+</ul>
+<% end %>
+<%= form_for @trailer do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :embed_url %>
+	<%= f.text_field :embed_url %>
+	<%= f.submit "Update Trailer", id: "submit" %>
+<% end %>
