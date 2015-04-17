@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  year: 2015-04-17
+  poster_url: MyString
+  plot: MyText
+
+two:
+  title: MyString
+  year: 2015-04-17
+  poster_url: MyString
+  plot: MyText
