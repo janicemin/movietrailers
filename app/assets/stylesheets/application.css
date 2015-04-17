@@ -54,7 +54,7 @@ header span{
 }
 
 header ul.nav-bar {
-	background-color: #e1e1e1;
+	background-color: #ccc;
 	display: block;
 	list-style: none;
 	margin:0px;
@@ -71,8 +71,17 @@ header ul.nav-bar li.nav-link a{
 	display: block;
 	padding: 5px;
 	width: 100%;
+	text-decoration: none;
+	color: white;
+	
 
 }
+
+header ul.nav-bar li.nav-link a:hover {
+
+	background-color: #e1e1e1;
+}
+
 
 
 /* Actor Stuff */
