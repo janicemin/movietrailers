@@ -6,9 +6,12 @@
 <% if @movie.trailers.any? %>
   <ul>
     <% @movie.trailers.each do |trailer| %>
-      <li><%= link_to trailer.title, trailer %></li>
+      <li><%= trailer.title  %></li>
+
     <% end %>
   </ul>
+  <%= @movie.trailers.first.embed_url %>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/CsGYh8AacgY" frameborder="0" allowfullscreen></iframe>
 <% end %>
 <p>Actors:</p>
 <ul>
