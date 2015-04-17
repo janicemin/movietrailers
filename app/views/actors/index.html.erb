@@ -2,6 +2,6 @@
 
 <ul>
 	<% @actors.each do |actor| %>
-		<li><%= actor.name %> </li>
+		<li><%= link_to actor.name, actor %></li>
 	<% end %>
 </ul>
