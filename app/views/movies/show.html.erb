@@ -13,7 +13,7 @@
       <li><%= trailer.title %></li>
       <iframe width="560" height="315" src="<%= trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
       <li><%= link_to "Edit", edit_movie_trailer_path(@movie, trailer) %></li>
-      <li><%= link_to "Destroy", movie_trailer_path(@movie, trailer), method: :delete %></li>
+      <li><%= link_to "Delete", movie_trailer_path(@movie, trailer), method: :delete %></li>
     <% end %>
   </ul>
 <% end %>
