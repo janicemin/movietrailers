@@ -6,6 +6,7 @@ class ActorsController < ApplicationController
 
 	end
 	def show
+		@movies = @actor.movies
 
 	end
 
@@ -15,6 +16,11 @@ class ActorsController < ApplicationController
 
 	def update
 
+		if @actor.update(actor_params)
+			redirect_to @actor
+		else
+			render :new
+		end
 	end
 
 	def new 
@@ -32,9 +38,8 @@ class ActorsController < ApplicationController
 	private
 
 	def actor_params
-
+		params.require(:actor).permit(:name, :photo_url)
 	end
-
 	def find_actor
 		@actor = Actor.find(params[:id])
 		
