@@ -1,5 +1,13 @@
 <h1><%= @actor.name %></h1>
 
 <img src='<%= @actor.photo_url %>' />
+
+<div class='roles'>
+<% @movies.each do |movie| %>
+	<span class='movie-link'><%= link_to movie.title, movie %> <%= movie.year %></span>
+<% end %>
+
+</div>
+
 <%= link_to 'Edit', edit_actor_path(@actor) %>
 <%= link_to 'Remove Actor', actor_path(@actor), method: :delete, data: {confirm: "are you sure?"} %> 
