@@ -10,8 +10,8 @@
 
     <% end %>
   </ul>
-  <%= @movie.trailers.first.embed_url %>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/CsGYh8AacgY" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="<%= @movie.trailers.last.embed_url %>" frameborder="0" allowfullscreen></iframe>
+  
 <% end %>
 <p>Actors:</p>
 <ul>
