@@ -1,0 +1,18 @@
+<h3><%= @movie.title %> (<%= @movie.year %>)</h3>
+<% if @movie.poster_url %>  
+  <%= image_tag @movie.poster_url %>
+<% end %>
+<p><%= @movie.plot %></p>
+<% if @movie.trailers.any? %>
+  <ul>
+    <% @movie.trailers.each do |trailer| %>
+      <li><%= link_to trailer.title, trailer %></li>
+    <% end %>
+  </ul>
+<% end %>
+<p>Actors:</p>
+<ul>
+  <% @movie.actors.each do |actor| %>
+    <li><%= link_to actor.name, actor %></li>
+  <% end %>
+</ul>

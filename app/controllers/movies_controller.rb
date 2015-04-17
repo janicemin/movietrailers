@@ -4,6 +4,10 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def show
+    @movie = Movie.find(params[:id])  
+  end
+
   def new
   end
 
@@ -13,8 +17,9 @@ class MoviesController < ApplicationController
 
   def search
     title = params[:s]
-    results = HTTParty.get("http://www.omdbapi.com/?s=#{title}")
+    short_results = HTTParty.get("http://www.omdbapi.com/?s=#{title}")
     imdb_ids = results["Search"].map {|result| result["imdbID"]}
-    @full_results = imdb_ids.map {|id| HTTParty.get("http://omdbapi.com/?i=#{id}&plot=full")}
+    @results = imdb_ids.map {|id| HTTParty.get("http://omdbapi.com/?i=#{id}&plot=full")}
+    render :results
   end
 end
